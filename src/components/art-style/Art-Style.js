@@ -7,8 +7,8 @@ const ArtStyleContainer = ({ heroNames, todayHero }) => {
   const gameStats = new GameStats(todayHero.name, "art");
   const modeStats = gameStats.getModeStats();
 
-  const initialZoomLevel = 3; // Start with a zoom level
-  const zoomOutStep = 0.5; // Decrease zoom level per wrong try
+  const initialZoomLevel = 6; // Start with a zoom level
+  const zoomOutStep = 0.25; // Decrease zoom level per wrong try
 
   // Hooks
   const [tries, setTries] = useState(modeStats.tries || 1);
@@ -49,7 +49,7 @@ const ArtStyleContainer = ({ heroNames, todayHero }) => {
           }`}
           alt={todayHero.name}
           style={{
-            transform: `scale(${currentZoom})`,
+            transform: `scale(${winned ? 1 : currentZoom})`,
           }}
         />
       </div>

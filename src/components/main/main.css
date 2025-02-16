@@ -129,7 +129,7 @@ input:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 5rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -270,13 +270,18 @@ input:hover {
     position: fixed;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
     pointer-events: none;
     z-index: 1000;
     overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup-container {
-    margin: 1rem auto;
+    margin: auto;
     z-index: 1000;
     max-width: 30%;
     min-width: 250px;
@@ -288,6 +293,7 @@ input:hover {
     max-height: 80vh;
     overflow-y: auto;
 }
+
 
 /* Close Icon */
 .close-icon {
@@ -334,14 +340,18 @@ input:hover {
     position: fixed;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
     pointer-events: none;
     z-index: 1000;
     overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .win-container {
     margin: auto;
-    margin-bottom: 1rem;
     z-index: 1000;
     max-width: 30%;
     min-width: 250px;
@@ -353,6 +363,7 @@ input:hover {
     max-height: 80vh;
     overflow-y: auto;
 }
+
 
 /* Close Icon */
 .close-icon {
@@ -434,26 +445,33 @@ input:hover {
     gap: 6px;
     align-items: center;
     border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero-option:hover {
+    background-color: #ffd342;
 }
 
 .hero-image {
     height: 50px;
     width: 50px;
     object-fit: contain;
-    cursor: pointer;
 }
 
 .hero-name {
-    cursor: pointer;
     padding: 5px;
 }
 
 .hero-option-wrong {
     background-color: red;
+    cursor: auto;
+    pointer-events: none;
 }
 
 .hero-option-right {
     background-color: green;
+    cursor: auto;
+    pointer-events: none;
 }
 
 .win-message {
@@ -513,13 +531,11 @@ input:hover {
     0% {
         opacity: 0;
         transform: scale(0.8);
-        /* Start small */
     }
 
     100% {
         opacity: 1;
         transform: scale(1);
-        /* Grow to full size */
     }
 }
 
@@ -566,7 +582,7 @@ input:hover {
 
     .more-information-container {
         position: absolute;
-        top: -5rem;
+        top: -80px;
         right: auto;
         width: 40px;
         height: 40px;
@@ -576,4 +592,5 @@ input:hover {
         width: 75px;
     }
 }
+
 /* Media Queries END */

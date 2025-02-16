@@ -124,6 +124,13 @@ const GameContainer = ({
     }
   };
 
+  // Handle Enter key press to select the first option
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && filteredNames.length > 0) {
+      chooseHero(filteredNames[0]); // Select the first hero
+    }
+  };
+
   return (
     <div className="container">
       {/* Winner container */}
@@ -160,6 +167,7 @@ const GameContainer = ({
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             ref={inputRef}
+            onKeyDown={handleKeyDown}
           />
         </div>
       )}
@@ -168,16 +176,17 @@ const GameContainer = ({
       {filteredNames.length > 0 && (
         <ul className="hero-option-list" ref={listRef}>
           {filteredNames.map((hero, index) => (
-            <div key={index} className="hero-option">
+            <div
+              key={index}
+              className="hero-option"
+              onClick={() => chooseHero(hero)}
+            >
               <img
                 className="hero-image"
                 src={`data:image/jpeg;base64,${hero.image}`}
                 alt={hero.image}
-                onClick={() => chooseHero(hero)}
               />
-              <span className="hero-name" onClick={() => chooseHero(hero)}>
-                {hero.name}
-              </span>
+              <span className="hero-name">{hero.name}</span>
             </div>
           ))}
         </ul>
