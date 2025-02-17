@@ -44,7 +44,7 @@ const QuotesContainer = ({ heroNames, todayHero }) => {
       mode={"quotes"}
     >
       <div className="quotes-list" ref={quotesListRef}>
-        {todayHero.hints
+        {todayHero.quotes
           ?.slice(0, usedTries)
           .map((hint, index) => (
             <p key={index} className="quote">
